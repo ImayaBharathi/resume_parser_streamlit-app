@@ -25,7 +25,7 @@ def pred(text):
     text=text.replace('\n',' ')
     doc = nlp(text)
     for ent in doc.ents:
-        print(f'{ent.label_.upper():{30}}-{ent.text}')
+        # print(f'{ent.label_.upper():{30}}-{ent.text}')
         output[ent.label_.upper()]=ent.text
     return output
 
@@ -50,6 +50,7 @@ if uploaded_file is not None:
             raw_text = docx2txt.process(uploaded_file)
             op = pred(raw_text)
             st.write(op)
+
 
 
 
