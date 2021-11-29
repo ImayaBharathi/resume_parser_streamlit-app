@@ -1,5 +1,16 @@
 {
-  "scripts": {
-    "build": "streamlit run app.py"
-  }
+    "version": 2,
+    "builds": [
+        {
+            "src": "streamlit app app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ]
 }
+
